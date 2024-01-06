@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Super Mario</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;700&display=swap" rel="stylesheet">
-    <title> Super Mario </title>
-</head>
-
-<body>
-
-    <div class="caixa-video-mario">
-        <video src="./imagem/video.mp4" autoplay muted loop></video>
-        <div class="mascara-video"></div>
-
-
+  <body>
+    <div class="video-backgrund">
+      <video src="./imagem/video.mp4" autoplay muted loop></video>
+      <div class="backgrund-mascara"></div>
     </div>
 
-    <div class="caixa-principal"> <img src="./imagem/logo.png" alt="logo do super mario" class="logo-mario">
-        <p> Encanadores Mario e Luigi - Resolvendo seus problemas com estilo </p>
+    <header>
+      <img id="img-box-1" alt="logo-mario" src="./imagem/logo.png" />
+    </header>
+
+    <main>
+      <section class="box-1">
+        <h1>Encanadores Mario e Luigi - Resolvendo seus problemas com estilo</h1>
         <p> Você já se encontrou em situação de emergência com encanamento? Vazamentos inesperados, canos intupidos ou
-            torneiras que não param de pingar? Não se preocupe porque estamos aqui para salvar o dia! Apresentamos a
-            vocês os encanadores mais famosos do Reino dos Cogumelos - Mario e Luig! </p>
-        <button onclick="cliqueiNoBotao()"> Fale conosco </button>
-    </div>
+          torneiras que não param de pingar? Não se preocupe porque estamos aqui para salvar o dia! Apresentamos a
+          vocês os encanadores mais famosos do Reino dos Cogumelos - Mario e Luig! </p>
 
+        <button onclick="enterForm()"> Fale conosco </button>
+      </section>
 
-    <img src="./imagem/mario.png" alt="logo mario e luigi" class="imagem-mario-luigi">
+      <section class="box-2">
+        <img src="./imagem/mario.png" alt="logo mario e luigi" id="img-box-2" />
+      </section>
+    </main>
 
-    <form class="fale-conosco">
+    <img src="./imagem/mario.png" alt="logo mario e luigi" id="img-responsivo" />
 
-        <input placeholder="Seu nome" type="text">
-        <input placeholder="Seu Telefone" type="tel">
-        <textarea placeholder="Digite o seu problema aqui"></textarea>
-        <button onclick="sumirFormulario()">Enviar formulário</button>
+    <form class="to-form">
 
+      <input placeholder="Seu nome" type="text"/>
+      <input placeholder="Seu Telefone" type="tel"/>
+      <textarea placeholder="Digite o seu problema aqui"></textarea>
+      <button type="submit"
+        class="button-form"
+        onclick="exitForm()"
+      >
+      Enviar formulário
+      </button>
     </form>
-     
-    <div class="mascara-form"></div>
-     
-</body>
-<script>
-   let formulario = document.querySelector(".fale-conosco") 
-   let mascara = document.querySelector(".mascara-form")
-   console.log(formulario)
 
-   function cliqueiNoBotao (){
-        formulario.style.left = "700px"
-        mascara.style.visibility = "visible"
-   }
+    <div class="backgrund-mascara-form"></div>
+  </body>
 
-   function sumirFormulario(){
-        formulario.style.left = "-320px"
-        mascara.style.visibility = "hidden"
+  <script>
+    let toForm = document.querySelector(".to-form");
+    let exitFormBackgrund = document.querySelector(".backgrund-mascara-form");
 
-   }
-</script>
+    function enterForm() {
+      toForm.style.left = "28px";
+      exitFormBackgrund.style.visibility = "visible";
+    }
+
+    function exitForm() {
+      toForm.style.left = "-320px";
+      exitFormBackgrund.style.visibility = "hidden";
+    }
+  </script>
 
 </html>
+
